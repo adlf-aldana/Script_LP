@@ -1,0 +1,229 @@
+{
+	"folders": {
+		"NB": {},
+		"SAI": {}
+	},
+	"connections": {
+		"informix-194807e169e-412dab9f193e76bb": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "DB_2da",
+			"save-password": true,
+			"folder": "NB",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.175:9088/tbase:INFORMIXSERVER\u003ddb2da_Reloaded",
+				"configurationType": "URL",
+				"type": "test",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194807e262f-73394fa64c4acae3": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "DB_Banking",
+			"save-password": true,
+			"folder": "NB",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.105:9088/tbase:INFORMIXSERVER\u003ddbBanking",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194807e316a-3aa801f457edf03d": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "DB_Contacless",
+			"save-password": true,
+			"folder": "NB",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.155:9088/tbase:INFORMIXSERVER\u003ddbBanking",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194807e3eb4-350ee910d6c436bf": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "DB_Contingencia",
+			"save-password": true,
+			"folder": "NB",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.165:9088/tbase:INFORMIXSERVER\u003ddbContingencia",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194807e4910-494447713b0309ff": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "DB_Development",
+			"save-password": true,
+			"folder": "NB",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.145:9088/tbase:INFORMIXSERVER\u003ddbDev",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194807e5423-1c3d605706215a3a": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "DB_Diario",
+			"save-password": true,
+			"folder": "NB",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.135:9088/tbase:INFORMIXSERVER\u003ddbDiario",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194807e5f04-7b9d29814f08805d": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "DB_Linea",
+			"save-password": true,
+			"show-system-objects": true,
+			"folder": "NB",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.5:9088/tbase:INFORMIXSERVER\u003ddbOnline",
+				"configurationType": "URL",
+				"type": "prod",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194807e6884-7cb240b611ce66c6": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "DB_Report",
+			"save-password": true,
+			"folder": "NB",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.125:9088/tbase:INFORMIXSERVER\u003ddbReport",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194807e71e8-d922f793b16f007": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "DB_Testing",
+			"save-password": true,
+			"folder": "NB",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.185:9088/tbase:INFORMIXSERVER\u003ddbTesting",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194807ea32a-7871d45979602b3c": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "2da_SAI",
+			"save-password": true,
+			"folder": "SAI",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.175:9088/tbsai:INFORMIXSERVER\u003ddb2daSai",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194807eacb0-4462a6a389d6681": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "Linea_SAI",
+			"save-password": true,
+			"folder": "SAI",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.5:9088/tbsai:INFORMIXSERVER\u003dLinea_Sai",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"test": {
+			"name": "Test",
+			"color": "org.jkiss.dbeaver.color.connectionType.qa.background",
+			"description": "Test (QA) database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": true,
+			"smart-commit": false,
+			"smart-commit-recover": true,
+			"auto-close-transactions": true,
+			"close-transactions-period": 900,
+			"auto-close-connections": true,
+			"close-connections-period": 7200
+		},
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": true,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		},
+		"prod": {
+			"name": "Production",
+			"color": "org.jkiss.dbeaver.color.connectionType.prod.background",
+			"description": "Production database",
+			"auto-commit": true,
+			"confirm-execute": true,
+			"confirm-data-change": true,
+			"smart-commit": false,
+			"smart-commit-recover": false,
+			"auto-close-transactions": true,
+			"close-transactions-period": 600,
+			"auto-close-connections": true,
+			"close-connections-period": 3600
+		}
+	}
+}
