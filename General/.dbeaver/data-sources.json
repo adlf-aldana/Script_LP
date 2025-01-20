@@ -1,4 +1,216 @@
 {
-	"folders": {},
-	"connections": {}
+	"folders": {
+		"NetBank": {},
+		"SAI": {}
+	},
+	"connections": {
+		"informix-1948533d36f-1be06608a2f58ed0": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "2da",
+			"save-password": true,
+			"folder": "NetBank",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.175:9088/tbase:INFORMIXSERVER\u003ddb2da_Reloaded",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-1948534dc60-116dc27b7f355592": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "2da_SAI",
+			"save-password": true,
+			"folder": "SAI",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.175:9088/tbsai:INFORMIXSERVER\u003ddb2daSai",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-19485356d97-1eb5173445ac0bf8": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "Banking",
+			"save-password": true,
+			"folder": "NetBank",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.105:9088/tbase:INFORMIXSERVER\u003ddbBanking",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-1948535f3b8-8e42a03b0b9c89": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "Contactless",
+			"save-password": true,
+			"folder": "NetBank",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.155:9088/tbase:INFORMIXSERVER\u003ddbBanking",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-19485366fe0-78f33633b271f6c5": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "Contingencia",
+			"save-password": true,
+			"folder": "NetBank",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.165:9088/tbase:INFORMIXSERVER\u003ddbContingencia",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-19485372040-157089f5f8ccbb42": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "Development",
+			"save-password": true,
+			"folder": "NetBank",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.145:9088/tbase:INFORMIXSERVER\u003ddbDev",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194853811e7-4272714cd040bc6": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "Diario",
+			"save-password": true,
+			"folder": "NetBank",
+			"configuration": {
+				"host": "jdbc:informix-sqli://172.24.4.135:9088/tbase:INFORMIXSERVER\u003ddbDiario",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.135:9088/tbase:INFORMIXSERVER\u003ddbDiario",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-19485397c9f-23c6017aae6377a8": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "Fusion",
+			"save-password": true,
+			"folder": "NetBank",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.55:9088/tbase:INFORMIXSERVER\u003ddbFusion",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194853bad30-570b1dcde96c726e": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "Linea",
+			"save-password": true,
+			"folder": "NetBank",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.5:9088/tbase:INFORMIXSERVER\u003ddbOnline",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194853c8ce0-3bc68dd79d879d3a": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "Report",
+			"save-password": true,
+			"folder": "NetBank",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.125:9088/tbase:INFORMIXSERVER\u003ddbReport",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194853d4020-6ee280451e847334": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "Testing",
+			"save-password": true,
+			"folder": "NetBank",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.185:9088/tbase:INFORMIXSERVER\u003ddbTesting",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		},
+		"informix-194853dd522-62cd738df98aca2d": {
+			"provider": "generic",
+			"driver": "informix",
+			"name": "Linea SAI",
+			"save-password": true,
+			"folder": "SAI",
+			"configuration": {
+				"host": "localhost",
+				"port": "1533",
+				"url": "jdbc:informix-sqli://172.24.4.5:9088/tbsai:INFORMIXSERVER\u003ddbOnline",
+				"configurationType": "URL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": true,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		}
+	}
 }
