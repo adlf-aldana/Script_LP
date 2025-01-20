@@ -1,0 +1,9 @@
+--BS
+-- 80		SEG. DESGRAVAME TITULAR (1 deudor)				(saldoXpagar*0.08000)/100 -> Mensual
+-- 81		SEG. DESGRAVAME TITULAR	(1 deudor 1 codeudor)	(saldoXpagar*0.14400)/100 -> Mensual
+-- 82		SEG. DESGRAVAME TITULAR	(1 deudor 2 codeudor)	(saldoXpagar*0.21120)/100 -> Mensual
+-- 83		SEG. DESGRAVAME TITULAR	(1 deudor 3 codeudor)	(saldoXpagar*0.26560)/100 -> Mensual
+-- 84		SEG. DESGRAVAME TITULAR	(1 deudor 4 codeudor)	(saldoXpagar*0.33200)/100 -> Mensual
+-- 85		SEG. DESGRAVAME TITULAR	(1 deudor 4 codeudor)	(saldoXpagar*0.39840)/100 -> Mensual
+-- 86		SEG. DESGRAVAME TITULAR	(1 deudor 4 codeudor)	(saldoXpagar*0.46480)/100 -> Mensual
+-- 87		SEG. DESGRAVAME TITULAR	(1 deudor 4 codeudor)	(saldoXpagar*0.53120)/100 -> Mensual

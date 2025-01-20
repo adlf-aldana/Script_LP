@@ -1,0 +1,57 @@
+SELECT gaavanava, gaavangar, gaavacage, gaavafreg, gaavafvto, gaavatipo, gaavapeva, gaavatzon, gaavargus, gaavaubic, gaavanouv, gaavamanz, gaavalote, gaavaagua, gaavaelec, gaavafono, gaavaalca, gaavapavi, gaavaotro, gaavaplac, gaavanpol, gaavanmot, gaavancha, gaavacfed, gaavaarea, gaavatoac, gaavavcom, gaavavact, gaavavcte, gaavavtsc, gaavavcoa, gaavavnet, gaavavcat, gaavavrep, gaavavvrp, gaavavmej, gaavaesco, gaavaanti, gaavafact, gaavastat, gaavafsta, gaavausec, gaavaagen, gaavaplaz, gaavauser, gaavamarc, gaavamdlo, gaavaanio, gaavacolo, gaavavven, gaavapate, gaavapaco, gaavapato, gaavafacc, gaavaesti, gaavatipi, gaavaciud, gaavahora, gaavafpro FROM gaava;
+SELECT gabcecdpt, gabceciud, gabcecesp, gabcedesc FROM gabce;
+SELECT gabcgcdpt, gabcgciud, gabcgdesc FROM gabcg;
+SELECT gabltangar, gabltatbol, gabltanbol, gabltaempr, gabltanomb, gabltacarg, gabltaantg, gabltating, gabltatliq FROM gablta;
+SELECT gacarncar, gacarcage, gacarnpre, gacarntit, gacartipo, gacarnant, gacarftra, gacarhora, gacaruser, gacarstat, gacardesc, gacarmrcb, gacarusta, gacarhsta, gacarfsta, gacarplaz, gacaragen, gacarfpro FROM gacar;
+SELECT gaconpref, gaconcorr, gacondesc, gaconabre, gaconmmod, gaconmrcb FROM gacon;
+SELECT gactlngar, gactlncar, gactlfcie, gactlfcia, gactlndoc, gactlfdem, gactlfinv, gactlfeau, gactlfcco, gactlfcpa, gactlfise, gactlfvin, gactlflin, gactlfruc, gactlflfu, gactlffue, gactlfimp, gactlfinm, gactlfveh, gactlfpre, gactlfemp, gactlfper, gactldper FROM gactl;
+SELECT gadclcage, gadclfdem, gadclfinv, gadclfeau, gadclfcco, gadclfcpa, gadclfile, gadclfdat, gadclfise, gadclfvin, gadclfdju, gadclflin, gadclfreg, gadclplaz, gadclagen, gadcluser, gadclhora, gadclfpro, gadclnoci, gadclfruc, gadclflfu, gadclffue FROM gadcl;
+SELECT gadgandav, gadgafech, gadgangar, gadgafreg, gadgafvto, gadgafact, gadgafddi, gadgagfin, gadgadacu, gadgadpre, gadgaagen, gadgaplaz, gadgauser, gadgahora, gadgafpro FROM gadga;
+SELECT gadirngar, gadirpais, gadirdpto, gadircprv, gadirciud, gadirzona, gadirubn1, gadirubn2, gadirubn3, gadirubn4, gadirubn5, gadircdom, gadirredo, gadirnrdo, gadirnrdp, gadirdire, gadirrefe, gadirpost, gadircgis, gadircsvp, gadirmrpi, gadirmrcb, gadirfmrc, gadiruser, gadirhora, gadirfpro, gadircmun, gadirugps, gadirlong, gadirlati, gadirambg 
+FROM gadir WHERE gadirngar = 18875;
+SELECT gadocngar, gadocnsol, gadoctdoc, gadocdreq, gadocdpre, gadocuser, gadochora, gadocfpro FROM gadoc;
+SELECT gadopcage, gadopnpre, gadopffca, gadopfiga, gadopfaga, gadopfiri, gadopficr, gadopfreg, gadopplaz, gadopagen, gadopuser, gadophora, gadopfpro, gadopnmod, gadopfdsa, gadopfimp, gadopfinm, gadopfveh, gadopfpre, gadopfemp, gadopfper FROM gadop;
+SELECT gafgactga, gafgacsup, gafgacmon, gafgamlim, gafgamuti, gafgamdis, gafgacade, gafgacacr, gafgauser, gafgahora, gafgafpro, gafgamrcb FROM gafga;
+SELECT gagarngar, gagartgar, gagarcage, gagarfreg, gagarmont, gagarcmon, gagarstat, gagarfsta, gagarusec, gagargrav, gagargfin, gagarfvto, gagarnpar, gagarfpar, gagarnlet, gagarflet, gagarsufl, gagarzona, gagarnouv, gagarmanz, gagarlote, gagarcsup, gagararea, gagartoac, gagarvcom, gagarvact, gagarvcte, gagarvtsc, gagarvcoa, gagarvnet, gagarvcat, gagarvrep, gagarvvrp, gagarvmej, gagardesc, gagarmpro, gagarnmod, gagarmrcb, gagaragen, gagarplaz, gagaruser, gagarhora, gagarfpro, gagarcant, gagarunid, gagarpuni, gagartsem, gagarpais, gagardpto, gagarcprv, gagarciud, gagarcmun, gagarambg, gagarugps, gagarlong, gagarlati, gagarctew, gagarccow, gagarvven, gagarpate, gagarpaco, gagarpato, gagardire, gagarfuav, gagarcaav, gagaridir, gagarcad1, gagarcad2 
+FROM gagar WHERE gagarngar = 18875;
+--SELECT gagarngar, gagartgar, gagarcage, gagarfreg, gagarmont, gagarcmon, gagarstat, gagarfsta, gagarusec, gagargrav, gagargfin, gagarfvto, gagarnpar, gagarfpar, gagarnlet, gagarflet, gagarsufl, gagarzona, gagarnouv, gagarmanz, gagarlote, gagarcsup, gagararea, gagartoac, gagarvcom, gagarvact, gagarvcte, gagarvtsc, gagarvcoa, gagarvnet, gagarvcat, gagarvrep, gagarvvrp, gagarvmej, gagardesc, gagarmpro, gagarnmod, gagarmrcb, gagaragen, gagarplaz, gagaruser, gagarhora, gagarfpro, gagarcant, gagarunid, gagarpuni, gagartsem, gagarpais, gagardpto, gagarcprv, gagarciud, gagarcmun, gagarambg, gagarugps, gagarlong, gagarlati, gagarctew, gagarccow, gagarvven, gagarpate, gagarpaco, gagarpato, gagardire, gagarfuav, gagarcaav, gagaridir, gagarcad1, gagarcad2, gagarnava, gagarusrm, gagarhorm, gagarfprm FROM gagar_h;
+
+SELECT gagopngar, gagopnmod, gagopnopr, gagoptgar, gagopcmon, gagopsald, gagopmont, gagopgrav, gagopgfin, gagopimpc, gagoptcam, gagopporc, gagopfreg, gagopgrad, gagopstat, gagopfsta, gagopusec, gagopfupr, gagopmrcb, gagopagen, gagopplaz, gagopuser, gagophora, gagopfpro, gagopnlet, gagopflet 
+FROM gagop WHERE gagopngar = 18875;
+
+SELECT *FROM bgmbg WHERE bgmbgnbol = 270
+--delete gagop WHERE gagopngar = 18875;
+--INSERT INTO gagop (gagopngar,gagopnmod,gagopnopr,gagoptgar,gagopcmon,gagopsald,gagopmont,gagopgrav,gagopgfin,gagopimpc,gagoptcam,gagopporc,gagopfreg,gagopgrad,gagopstat,gagopfsta,gagopusec,gagopfupr,gagopmrcb,gagopagen,gagopplaz,gagopuser,gagophora,gagopfpro,gagopnlet,gagopflet) VALUES (18875,8,270,13,1,470878.65,470878.65,0.00,400246.85,400246.85,1.00000,100.000,'2023-01-19',1,0,'2023-01-19','SPK','2023-04-09',0,30,30,'SPK','15:47:42','2023-01-19','CCI2CB2000003022023 ','2023-01-19');
+
+
+SELECT gagopngar, gagopnmod, gagopnopr, gagoptgar, gagopcmon, gagopsald, gagopmont, gagopgrav, gagopgfin, gagopimpc, gagoptcam, gagopporc, gagopfreg, gagopgrad, gagopstat, gagopfsta, gagopusec, gagopfupr, gagopmrcb, gagopagen, gagopplaz, gagopuser, gagophora, gagopfpro, gagopnlet, gagopflet, gagopnava, gagopusrm, gagophorm, gagopfprm 
+FROM gagop_h WHERE gagopngar = 18875;
+SELECT gahgangar, gahgatgar, gahgacage, gahgafreg, gahgamont, gahgacmon, gahgastat, gahgafsta, gahgausec, gahgagrav, gahgagfin, gahgafvto, gahganpar, gahgafpar, gahganlet, gahgaflet, gahgasufl, gahgazona, gahganouv, gahgamanz, gahgalote, gahgacsup, gahgaarea, gahgatoac, gahgavcom, gahgavact, gahgavcte, gahgavtsc, gahgavcoa, gahgavnet, gahgavcat, gahgavrep, gahgavvrp, gahgavmej, gahgadesc, gahgampro, gahganmod, gahgamrcb, gahgaagen, gahgaplaz, gahgauser, gahgahora, gahgafpro FROM gahga;
+SELECT gahgongar, gahgonmod, gahgonopr, gahgotgar, gahgocmon, gahgosald, gahgogfin, gahgoporc, gahgofreg, gahgograd, gahgostat, gahgofsta, gahgousec, gahgomrcb, gahgoagen, gahgoplaz, gahgouser, gahgohora, gahgofpro FROM gahgo;
+SELECT gahiangar, gahianrua, gahiaplaa, gahiaplas, gahiaplao, gahiaulin, gahiaanch, gahiafond, gahiamafe, gahiaafec, gahiatfor, gahiattop, gahiatgep, gahiatcvc, gahiatcvv, gahiatsag, gahiatsal, gahiatslu, gahiatsle, gahiatstr, gahiatsgs, gahiaimob, gahiaetip, gahiaedes, gahiaeobg, gahiaeacb, gahiaeins, gahiaeobc, gahiaeobs, gahiabcbg, gahiabcbe, gahiagcsr, gahiagcom, gahiaantg, gahiatcm2, gahiafdep, gahiavrea, gahiavrep, gahiamhre, gahiaiptr, gahiavobo, gahiaavob, gahiauser, gahiahora, gahiafpro, gahiacua1, gahiacua2, gahiagvig, gahiapiso, gahiavutr, gahiaudes, gahiaviaa, gahiaviau, gahiaetco
+FROM gahia WHERE gahiangar = 18875;
+SELECT gahiangar, gahianrua, gahiaplaa, gahiaplas, gahiaplao, gahiaulin, gahiaanch, gahiafond, gahiamafe, gahiaafec, gahiatfor, gahiattop, gahiatgep, gahiatcvc, gahiatcvv, gahiatsag, gahiatsal, gahiatslu, gahiatsle, gahiatstr, gahiatsgs, gahiaimob, gahiaetip, gahiaedes, gahiaeobg, gahiaeacb, gahiaeins, gahiaeobc, gahiaeobs, gahiabcbg, gahiabcbe, gahiagcsr, gahiagcom, gahiaantg, gahiatcm2, gahiafdep, gahiavrea, gahiavrep, gahiamhre, gahiaiptr, gahiavobo, gahiaavob, gahiauser, gahiahora, gahiafpro, gahiacua1, gahiacua2, gahiagvig, gahiapiso, gahiavutr, gahiaudes, gahiaviaa, gahiaviau, gahiaetco, gahianava, gahiausrm, gahiahorm, gahiafprm 
+FROM gahia_h;
+SELECT gahicngar, gahicitem, gahictinm, gahicsupe, gahicdepe, gahiccom2, gahiccoto, gahicuser, gahichora, gahicfpro 
+FROM gahic WHERE gahicngar = 18875;
+SELECT gahicngar, gahicitem, gahictinm, gahicsupe, gahicdepe, gahiccom2, gahiccoto, gahicuser, gahichora, gahicfpro, gahicnava, gahicusrm, gahichorm, gahicfprm FROM gahic_h;
+SELECT gahimngar, gahimtinm, gahimstat, gahimflio, gahimnpar, gahimfins, gahimtest, gahimagra, gahimfgra, gahimtgra, gahimcato, gahimipto, gahimimon, gahimanio, gahimplan, gahimunid, gahimdimt, gahimdime, gahimvter, gahimvedi, gahimvalo, gahimvcte, gahimvced, gahimvcat, gahimvven, gahimubn1, gahimubn2, gahimubn3, gahimubn4, gahimubn5, gahimndom, gahimnedi, gahimndep, gahimdire, gahimdirr 
+FROM gahim WHERE gahimngar = 18875;
+SELECT gahimngar, gahimtinm, gahimstat, gahimflio, gahimnpar, gahimfins, gahimtest, gahimagra, gahimfgra, gahimtgra, gahimcato, gahimipto, gahimimon, gahimanio, gahimplan, gahimunid, gahimdimt, gahimdime, gahimvter, gahimvedi, gahimvalo, gahimvcte, gahimvced, gahimvcat, gahimvven, gahimubn1, gahimubn2, gahimubn3, gahimubn4, gahimubn5, gahimndom, gahimnedi, gahimndep, gahimdire, gahimdirr, gahimnava, gahimusrm, gahimhorm, gahimfprm FROM gahim_h;
+SELECT gahrgngar, gahrgcage, gahrgstat, gahrgfsta, gahrgfreg, gahrgumst, gahrgdes1, gahrgdes2, gahrgplaz, gahrgagen, gahrguser, gahrghora, gahrgfpro FROM gahrg;
+SELECT gahvnngar, gahvntveh, gahvnstat, gahvnmarc, gahvnmdlo, gahvncolo, gahvnanof, gahvnproc, gahvnmuni, gahvnnpta, gahvnfemi, gahvnnmot, gahvnncha, gahvnnprt, gahvncili, gahvntrac, gahvncapa, gahvnturb, gahvncarr, gahvntsvc, gahvncomb, gahvnlcir, gahvnipto, gahvnimon, gahvnanio, gahvnvalo, gahvnvalc, gahvnnpol, gahvnsoat, gahvnvnre, gahvnruat FROM gahvn;
+SELECT gamcantra, gamcaftra, gamcattra, gamcausrt, gamcancar, gamcanota, gamcauser, gamcahora, gamcafpro, gamcaplaz, gamcaagen FROM gamca;
+SELECT gamyengar, gamyeitem, gamyetmaq, gamyecant, gamyemarc, gamyeseri, gamyevalo, gamyevalc FROM gamye;
+SELECT gaot1ngar, gaot1item, gaot1tesp, gaot1raza, gaot1cant, gaot1edad, gaot1ueda, gaot1valo, gaot1valc FROM gaot1;
+SELECT gaot2ngar, gaot2line, gaot2fadq, gaot2ngra, gaot2fgra, gaot2acci, gaot2tjta, gaot2cont, gaot2duen, gaot2ulfa, gaot2valo, gaot2nser FROM gaot2;
+SELECT gaotrngar, gaotritem, gaotrdesc, gaotrvalo, gaotrvalc 
+FROM gaotr WHERE gaotrngar = 18875;
+SELECT gapfgcclf, gapfgctga, gapfgcsup, gapfgptop, gapfgppon, gapfguser, gapfghora, gapfgfpro FROM gapfg;
+SELECT gaplanngar, gaplanitem, gaplantpla, gaplanedad, gaplanueda, gaplansupe, gaplanunid, gaplanvalo, gaplanvalc FROM gaplan;
+SELECT gapolngar, gapolnpol, gapolccia, gapolmont, gapolfven, gapolsubg, gapolvsub, gapolfsub, gapolries, gapoldesc, gapolagen, gapolplaz, gapoluser, gapolhora, gapolfpro, gapolfini FROM gapol;
+SELECT gaprenngar, gaprenitem, gaprentmer, gaprencant, gaprenunid, gaprenvalu, gaprenvalo, gaprenvalc, gaprenindu, gaprenesme FROM gapren;
+SELECT gaprtngar, gaprtcage FROM gaprt;
+SELECT gapvtangar, gapvtapsto, gapvtadire, gapvtaasoc, gapvtaafil, gapvtaupat, gapvtavalo FROM gapvta;
+SELECT gardrnhip, gardrnfol, gardrngar, gardrfins, gardrhins, gardrtit1, gardrtit2, gardrtit3, gardrdesc, gardrnesc, gardrfesc, gardrtcon, gardrnumn, gardrnomn, gardrnpar, gardrzona, gardrnouv, gardrmanz, gardrlote, gardrcsup, gardrfreg, gardragen, gardrplaz, gardruser, gardrhora, gardrfpro, gardrmont, gardrtipo, gardrcmon FROM gardr;
+SELECT gargcnhip, gargcnfol, gargcnasi, gargcngar, gargctipo, gargcnesc, gargcfesc, gargctcon, gargcnumn, gargcnomn, gargcnpar, gargcmont, gargccmon, gargcbene, gargcnpre, gargcfpre, gargchpre, gargcnruc, gargcdesc, gargcfreg, gargcagen, gargcplaz, gargcuser, gargchora, gargcfpro FROM gargc;
+SELECT gasolngar, gasolnsol, gasoluser, gasolhora, gasolfpro FROM gasol;
