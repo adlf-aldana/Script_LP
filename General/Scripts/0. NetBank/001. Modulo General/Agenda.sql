@@ -6,16 +6,16 @@ FROM gbcic;
 -- DATOS GENERALES
 SELECT * 
 FROM gbage 
-WHERE gbagecage = 363607 ; --intermediacion financiera
+WHERE gbagecage = 78 ; --intermediacion financiera
 
 -- DATOS ADICIONALES - MENSAJES - CORREO - OTROS
 SELECT * 
 FROM gbdac 
-WHERE gbdaccage = 359160;
+WHERE gbdaccage = 27964;
 --
 SELECT * 
 FROM gbdan 
-WHERE gbdancage = 359160;
+WHERE gbdancage = 27964;
 
 /* NO HAY EN LA NUEVA AGENDA */
 SELECT * 
@@ -76,7 +76,7 @@ WHERE gbnagcage = 363607;
 -- REFERENCIAS
 SELECT * 
 FROM gbrag
-WHERE gbragcage = 359160;
+WHERE gbragcage = 27964;
 
 -- VARIABLES
 SELECT *

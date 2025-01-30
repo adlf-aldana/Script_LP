@@ -125,11 +125,12 @@
 			"configuration": {
 				"host": "localhost",
 				"port": "1533",
-				"url": "jdbc:informix-sqli://172.24.4.55:9088/tbase:INFORMIXSERVER\u003ddbFusion",
+				"url": "jdbc:informix-sqli://172.24.4.66:9088/tbase:INFORMIXSERVER\u003ddbs04",
 				"configurationType": "URL",
 				"type": "dev",
 				"closeIdleConnection": true,
-				"auth-model": "native"
+				"auth-model": "native",
+				"handlers": {}
 			}
 		},
 		"informix-194853bad30-570b1dcde96c726e": {

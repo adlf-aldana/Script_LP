@@ -21,3 +21,11 @@ SELECT *FROM tdmtd WHERE tdmtdcage = 359160;
 
 
 /***************************************************************/
+
+SELECT rjmrjstat,*
+FROM rjmrj
+WHERE rjmrjnret = 5308
+
+UPDATE rjmrj
+SET rjmrjstat = 1
+WHERE rjmrjnret = 5308

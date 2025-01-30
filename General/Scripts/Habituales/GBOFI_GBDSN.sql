@@ -1,3 +1,9 @@
+--CM03 - FUSION
+--CM04 - BANKING
+--CM05 - CONTACTLESS
+--CM06 - TESTING
+--CM07 - 2DA
+--CM08 - CONTINGENCIA 
 SELECT *FROM tdofi
 --tbase@mlptcp1                 
 UPDATE tdofi 
@@ -8,7 +14,7 @@ SELECT *FROM gbofi ORDER BY 1;
 --tbase@cm09                    
 -- CM
 UPDATE gbofi
-SET gbofihost = 'tbase@cm04';
+SET gbofihost = 'tbase@cm07';
 
 -- LINEA
 UPDATE gbofi

@@ -2,8 +2,9 @@
 -- LIMPIAR CLAVES
 delete adcry a 
 where a.adcryusrn in('AMY');--in ('VEO','ERM','SMW','RET','RCE','RGL');
+
 delete adcry_h a 
-where a.adcryusrn IN ('VCG');
+where a.adcryusrn IN ('AMY');
 
 /* PARA HABILITAR */
 --update adusr a
