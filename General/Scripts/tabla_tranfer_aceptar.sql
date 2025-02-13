@@ -1,0 +1,43 @@
+SELECT tetrnfpro FECHA_TRANS,
+--	TRIM(t.tetrncenx) COD_PARTICIPANTE,
+	TRIM(t2.tecondesc) PARTICIPANTE,
+	tetrnnvia CUENTA,
+	tetrncage COD_CLI,
+	tetrnntra NUM_TRAN,
+	tetrnstat ESTADO,
+	tetrntxmd NUM_ACH,
+	tetrnnpig NUM_PIG,	
+	tetrnimpt IMPORTE		
+FROM tetrn t , tecon t2 
+WHERE (t.tetrnstat = 104 
+	OR t.tetrnntra IN (
+380877,--FIE
+382831,--BISA
+386314,--BISA
+381067,--MERCANTIL
+383014,--MERCANTIL
+380878,--BANCO SOL
+381106,--GANADERO
+386521,--GANADERO
+380841,--BNB
+381589,--BNB
+382142,--BNB
+382952,--BNB
+381071,--BCP
+382891,--BCP
+383272,--BCP
+381166,--BCP NO TIENE SALDO -OK 100
+389317,--BCP NO TIENE SALDO -OK 155
+380903,--BUN
+381439,--BUN
+381386,--BUN
+380810,--BUN
+381082,--BUN
+381496--BUN
+))
+AND (t.tetrnftra = '2025-02-02' OR tetrnfsta = '2025-02-02')
+AND t.tetrnfpro = '2025-02-02'
+--AND t.tetrnntra = 380823
+AND t2.teconpref = 2
+AND t2.teconcorr = t.tetrncenx
+ORDER BY 5
