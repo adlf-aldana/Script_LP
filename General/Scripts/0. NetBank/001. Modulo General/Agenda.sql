@@ -76,7 +76,7 @@ WHERE gbnagcage = 363607;
 -- REFERENCIAS
 SELECT * 
 FROM gbrag
-WHERE gbragcage = 27964;
+WHERE gbragcage = 360284;
 
 -- VARIABLES
 SELECT *
@@ -96,12 +96,12 @@ FROM gbtrp;
 
 SELECT *
 FROM gbrel 
-WHERE gbrelcage IN (359160 );
+WHERE gbrelcage IN (360284 );
 
 -- CONYUGUE
 SELECT *
 FROM gbdan 
-WHERE gbdancage in (363607 );
+WHERE gbdancage in (360284 );
 
 SELECT *
 FROM informix.gbdac2;

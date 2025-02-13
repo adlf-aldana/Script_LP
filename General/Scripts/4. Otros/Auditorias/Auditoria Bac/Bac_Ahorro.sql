@@ -8,12 +8,12 @@ DECODE(b.camcatpca,(SELECT cc.catcatpca
                     AND cc.catcatpca IN (3,38,39,40,41)
                     AND b.camcancta NOT IN (SELECT p.catitncta
                                             FROM catit p
-                                            WHERE p.catitncta=b.camcancta)),'SI','NO') PERSONA_INSTITUCIONAL, --4                         
+                                            WHERE p.catitncta=b.camcancta)),'SI','NO') PERSONA_INSTITUCION, --4
 c.catcatpca COD_PRODUCTO,--5
 a.gbagecage NRO_SOCIO,--6
 TRIM(a.gbagenomb) NOMBRE_SOCIO,--7
-TRIM(a.gbagendid) CI_SOCIO,--8
-TRIM(a.gbagenruc) NIT_SOCIO,--9
+TRIM(a.gbagendid) CI_ASOCIADO,--8
+TRIM(a.gbagenruc) NIT_ASOCIADO,--9
 b.camcancta NRO_CUENTA,--10
 decode(b.camcacmon,1,'BOLIVIANOS',2,'DOLARES') MONEDA,--11
 TRIM(h.cacondesc) ESTADO,--12
@@ -91,7 +91,7 @@ ROUND(decode(b.camcatpca,
    WHERE x.catrnncta = b.camcancta
    AND x.catrnpref = 10
    AND x.catrncorr = 1
-   AND x.catrnstat = 0) FECHA_ULTIMA_CAPITALIZACION,--22
+   AND x.catrnstat = 0) FECHA_ULT_CAPITALIZACION,--22
 (SELECT min(catrnftra)
 FROM (SELECT FIRST 2 catrnftra
 	FROM catrn
@@ -100,7 +100,7 @@ FROM (SELECT FIRST 2 catrnftra
 	ORDER BY catrnftra DESC) tmp
 ) FECHA_PENULT_OPERACION, --23
 b.camcafumv FECHA_ULT_OPERACION_CTA,--24
-b.camcafumv FECHA_ULT_OPERACION_SOCIO--25
+b.camcafumv FECHA_ULT_OPERACION_ASOCIADO--25
 from gbage a,camca b,catca c,OUTER canid d,cacon e,OUTER capro f,gbofi g,cacon h,outer catcm i,gbcon j
 where a.gbagecage=b.camcacage
 and b.camcatpca=c.catcatpca
@@ -118,22 +118,20 @@ and a.gbagetper=j.gbconcorr
 and b.camcastat in(1,2,3)
 and d.canidmrcb=0
 and e.caconpref=3
---AND b.camcancta = 3051920851
-and f.capronmes=(select month(a.gbpmtfdia)
-         		from  gbpmt a)
-and f.caproanio=(select year(a.gbpmtfdia)
-         		from  gbpmt a)
-and not exists (select *
-              from capig h
-              where h.capigncta=b.camcancta
-              and h.capigstat=0
-              and h.capigcpig in(select pi.catpgcpig  
-                                from catpg pi
-                                where pi.catpgcpig=h.capigcpig
-                                and pi.catpgtpgr is not null
-                                and pi.catpgctab is not null));
+--AND b.camcancta = 2051000087
+AND f.capronmes = (SELECT MONTH(a.gbpmtfdia) FROM  gbpmt a)
+AND f.caproanio = (SELECT YEAR(a.gbpmtfdia) FROM  gbpmt a)
+AND NOT EXISTS (SELECT *
+     	        FROM capig h
+		        WHERE h.capigncta = b.camcancta
+			    AND h.capigstat = 0
+			    AND h.capigcpig IN (SELECT pi.catpgcpig	
+			    				   FROM catpg pi
+			    				   WHERE pi.catpgcpig=h.capigcpig
+			    				   AND pi.catpgtpgr IS NOT NULL
+                                   AND pi.catpgctab IS NOT NULL))
 /* DOS */ --PIGNORACIONES
-UNION;
+UNION
 select distinct b.camcaagen COD_AGENCIA,--1
 g.gbofidesc DESC_AGENCIA,--2
 j.gbconcorr TIPO_PERSONA,--3
@@ -143,12 +141,12 @@ j.gbconcorr TIPO_PERSONA,--3
                       AND cc.catcatpca IN (3,38,39,40,41)
                       AND b.camcancta NOT IN (SELECT p.catitncta
                                               FROM catit p
-                                              WHERE p.catitncta=b.camcancta)),'SI','NO') PERSONA_INSTITUCIONAL, --4
+                                              WHERE p.catitncta=b.camcancta)),'SI','NO') PERSONA_INSTITUCION, --4
 c.catcatpca COD_PRODUCTO,--5
 a.gbagecage NRO_SOCIO,--6
 TRIM(a.gbagenomb) NOMBRE_SOCIO,--7
-TRIM(a.gbagendid) CI_SOCIO,--8
-TRIM(a.gbagenruc) NIT_SOCIO,--9
+TRIM(a.gbagendid) CI_ASOCIADO,--8
+TRIM(a.gbagenruc) NIT_ASOCIADO,--9
 b.camcancta NRO_CUENTA,--10
 decode(b.camcacmon,1,'BOLIVIANOS',2,'DOLARES') MONEDA,--11
 TRIM(h.cacondesc) ESTADO,--12
@@ -175,15 +173,15 @@ round(decode(b.camcatpca,
            	and cc.catcatpca in(select p.caprptpca
            						from caprp p
                                	where p.caprptpca=cc.catcatpca)), d.canidtasa), 2) TASA_INTERES,--15                               	
-round(((b.camcasact *-1)-(select sum(l.capigimpo)
-                          from capig l
-                          where l.capigncta=b.camcancta
-                          and l.capigstat=0
-                          and l.capigcpig in(select pi.catpgcpig  
-                                             from catpg pi
-                                             where pi.catpgcpig=l.capigcpig
-                                             and pi.catpgtpgr is not null
-                                             and pi.catpgctab is not null))),2) SALDO, --16             
+	ROUND(((b.camcasact *-1)-(SELECT sum(l.capigimpo)
+                         FROM capig l
+						 WHERE l.capigncta=b.camcancta
+                         AND l.capigstat=0
+ 						 AND l.capigcpig IN(SELECT pi.catpgcpig	
+			    				            FROM catpg pi
+			    				            WHERE pi.catpgcpig=l.capigcpig
+			    				            AND pi.catpgtpgr is not null
+                                            AND pi.catpgctab is not null))),2) SALDO,--16      
 f.caprompro PROMEDIO_DE_LOS_SALDOS,--17
 round(b.camcaiacu,2) MONTO_INTERES_DEVENGADO,--18
 (select e.gbpmtfdia
@@ -234,7 +232,7 @@ ROUND(decode(b.camcatpca,
    WHERE x.catrnncta = b.camcancta
    AND x.catrnpref = 10
    AND x.catrncorr = 1
-   AND x.catrnstat = 0) FECHA_ULTIMA_CAPITALIZACION,--22
+   AND x.catrnstat = 0) FECHA_ULT_CAPITALIZACION,--22
 (SELECT min(catrnftra)
 FROM (SELECT FIRST 2 catrnftra
 	FROM catrn
@@ -243,7 +241,7 @@ FROM (SELECT FIRST 2 catrnftra
 	ORDER BY catrnftra DESC) tmp
 ) FECHA_PENULT_OPERACION, --23
 b.camcafumv fecha_ult_operacion_cta,--24
-b.camcafumv fecha_ult_operacion_socio--25
+b.camcafumv FECHA_ULT_OPERACION_ASOCIADO--25
 from gbage a,camca b,catca c,OUTER canid d,cacon e,OUTER capro f,gbofi g,cacon h,outer catcm i,gbcon j
 where a.gbagecage=b.camcacage
 and b.camcatpca=c.catcatpca
@@ -261,22 +259,20 @@ and a.gbagetper=j.gbconcorr
 and b.camcastat in(1,2,3)
 and d.canidmrcb=0
 and e.caconpref=3
---AND b.camcancta = 3051920851--3051462756
-and f.capronmes=(select month(a.gbpmtfdia)
-         from  gbpmt a)
-and f.caproanio=(select year(a.gbpmtfdia)
-         from  gbpmt a)
-and exists (select *
-          from capig h
-          where h.capigncta=b.camcancta
-          and h.capigstat=0
-          and h.capigcpig in(select pi.catpgcpig  
-                   from catpg pi
-                   where pi.catpgcpig=h.capigcpig
-                   and pi.catpgtpgr is not null
-                   and pi.catpgctab is not null));
+--AND b.camcancta = 2051000087--3051462756
+AND f.capronmes = (SELECT MONTH(a.gbpmtfdia) FROM  gbpmt a)
+AND f.caproanio = (SELECT YEAR(a.gbpmtfdia) FROM  gbpmt a)
+AND exists (SELECT *
+     	    FROM capig h
+		    WHERE h.capigncta = b.camcancta
+			AND h.capigstat = 0
+			AND h.capigcpig IN(SELECT pi.catpgcpig	
+			    			   FROM catpg pi
+			    			   WHERE pi.catpgcpig=h.capigcpig
+			    			   AND pi.catpgtpgr IS NOT NULL
+                               AND pi.catpgctab IS NOT NULL))
 /* TRES */ -- RETENCIONES
-UNION;
+UNION
 select distinct b.camcaagen COD_AGENCIA,--1
 g.gbofidesc DESC_AGENCIA,--2
 j.gbconcorr TIPO_PERSONA,--3
@@ -286,12 +282,12 @@ j.gbconcorr TIPO_PERSONA,--3
                       AND cc.catcatpca IN (3,38,39,40,41)
                       AND b.camcancta NOT IN (SELECT p.catitncta
                                               FROM catit p
-                                              WHERE p.catitncta=b.camcancta)),'SI','NO') PERSONA_INSTITUCIONAL, --4
+                                              WHERE p.catitncta=b.camcancta)),'SI','NO') PERSONA_INSTITUCION, --4
 c.catcatpca COD_PRODUCTO,--5
 a.gbagecage NRO_SOCIO,--6
 TRIM(a.gbagenomb) NOMBRE_SOCIO,--7
-TRIM(a.gbagendid) CI_SOCIO,--8
-TRIM(a.gbagenruc) NIT_SOCIO,--9
+TRIM(a.gbagendid) CI_ASOCIADO,--8
+TRIM(a.gbagenruc) NIT_ASOCIADO,--9
 b.camcancta NRO_CUENTA,--10
 decode(b.camcacmon,1,'BOLIVIANOS',2,'DOLARES') MONEDA,--11
 TRIM(h.cacondesc) ESTADO,--12
@@ -318,16 +314,16 @@ round(decode(b.camcatpca,
            	and cc.catcatpca in(select p.caprptpca
            						from caprp p
                                	where p.caprptpca=cc.catcatpca)), d.canidtasa), 2) TASA_INTERES,--15
-round((select sum(l.capigimpo)
-     from capig l
-     where l.capigncta=b.camcancta
-     and l.capigstat=0
-     and l.capigcpig in(select pi.catpgcpig 
-                        from catpg pi
-                        where pi.catpgcpig=l.capigcpig
-                        and pi.catpgtpgr is not null
-                        and pi.catpgctab is not null
-                        and pi.catpgcpig in (3,5,6,7,8,9,10,50))),2) SALDO, --16
+	ROUND((SELECT sum(l.capigimpo)
+	       FROM capig l
+	       WHERE l.capigncta = b.camcancta
+	       AND l.capigstat = 0
+	       AND l.capigcpig IN(SELECT pi.catpgcpig	
+				    		  FROM catpg pi
+				    		  WHERE pi.catpgcpig=l.capigcpig
+				    		  AND pi.catpgtpgr IS NOT NULL
+	                          AND pi.catpgctab IS NOT NULL
+	                          AND pi.catpgcpig IN (3,5,6,7,8,9,10,50))),2) SALDO,--16
 f.caprompro PROMEDIO_DE_LOS_SALDOS,--17
 round(b.camcaiacu,2) MONTO_INTERES_DEVENGADO,--18
 (select e.gbpmtfdia
@@ -405,7 +401,7 @@ decode(b.camcacmon,1,(select r.catpgctab
    WHERE x.catrnncta = b.camcancta
    AND x.catrnpref = 10
    AND x.catrncorr = 1
-   AND x.catrnstat = 0) FECHA_ULTIMA_CAPITALIZACION,--22
+   AND x.catrnstat = 0) FECHA_ULT_CAPITALIZACION,--22
 (SELECT min(catrnftra)
 FROM (SELECT FIRST 2 catrnftra
 	FROM catrn
@@ -414,7 +410,7 @@ FROM (SELECT FIRST 2 catrnftra
 	ORDER BY catrnftra DESC) tmp
 ) FECHA_PENULT_OPERACION, --23
 b.camcafumv fecha_ult_operacion_cta,--24
-b.camcafumv fecha_ult_operacion_socio--25*/
+b.camcafumv FECHA_ULT_OPERACION_ASOCIADO--25*/
 from gbage a,camca b,catca c,OUTER canid d,cacon e,OUTER capro f,gbofi g,cacon h,outer catcm i,gbcon j
 where a.gbagecage=b.camcacage
 and b.camcatpca=c.catcatpca
@@ -431,13 +427,10 @@ and j.gbconpfij=1
 and a.gbagetper=j.gbconcorr
 and b.camcastat in(1,2,3)
 and d.canidmrcb=0
-and e.caconpref=3;
-/*
---AND b.camcancta = 3051920851--3051462756
-and f.capronmes=(select month(a.gbpmtfdia)
-         from  gbpmt a)
-and f.caproanio=(select year(a.gbpmtfdia)
-         from  gbpmt a)
+and e.caconpref=3
+--AND b.camcancta = 2051000087--3051462756
+AND f.capronmes = (SELECT MONTH(a.gbpmtfdia) FROM gbpmt a)
+AND f.caproanio = (SELECT YEAR(a.gbpmtfdia) FROM gbpmt a)
 AND EXISTS (SELECT *
      	    FROM capig h
 		    WHERE h.capigncta = b.camcancta
@@ -448,9 +441,9 @@ AND EXISTS (SELECT *
 			    			   AND pi.catpgtpgr IS NOT NULL
                                AND pi.catpgctab IS NOT NULL
                                AND pi.catpgcpig IN (3, 5, 6, 7, 8, 9, 10, 50))
-							   AND h.capigimpo > 0);
+							   AND h.capigimpo > 0)
 /* CUATRO */
-UNION;
+UNION
 select distinct b.camcaagen COD_AGENCIA,--1
 g.gbofidesc DESC_AGENCIA,--2
 j.gbconcorr TIPO_PERSONA,--3
@@ -460,12 +453,12 @@ DECODE(b.camcatpca,(SELECT cc.catcatpca
                     AND cc.catcatpca IN (3,38,39,40,41)
                     AND b.camcancta NOT IN (SELECT p.catitncta
                                             FROM catit p
-                                            WHERE p.catitncta=b.camcancta)),'SI','NO') PERSONA_INSTITUCIONAL, --4
+                                            WHERE p.catitncta=b.camcancta)),'SI','NO') PERSONA_INSTITUCION, --4
 c.catcatpca COD_PRODUCTO,--5
 a.gbagecage NRO_SOCIO,--6
 TRIM(a.gbagenomb) NOMBRE_SOCIO,--7
-TRIM(a.gbagendid) CI_SOCIO,--8
-TRIM(a.gbagenruc) NIT_SOCIO,--9
+TRIM(a.gbagendid) CI_ASOCIADO,--8
+TRIM(a.gbagenruc) NIT_ASOCIADO,--9
 b.camcancta NRO_CUENTA,--10
 decode(b.camcacmon,1,'BOLIVIANOS',2,'DOLARES') MONEDA,--11
 TRIM(h.cacondesc) ESTADO,--12
@@ -492,21 +485,21 @@ round(decode(b.camcatpca,
            	and cc.catcatpca in(select p.caprptpca
            						from caprp p
                                	where p.caprptpca=cc.catcatpca)), d.canidtasa), 2) TASA_INTERES,--15
-round((select sum(l.capigimpo)
-            from capig l
-            where l.capigncta=b.camcancta
-            and l.capigstat=0
-            and l.capigcpig in(select pi.catpgcpig
-                      from catpg pi
-                      where pi.catpgcpig=l.capigcpig
-                      and pi.catpgtpgr is not null
-                      and pi.catpgctab is not NULL
-                      and pi.catpgcpig NOT in (3,5,6,7,8,9,10,50)))) SALDO, --16
+	ROUND((SELECT sum(l.capigimpo)
+	       FROM capig l
+	       WHERE l.capigncta = b.camcancta
+	       AND l.capigstat = 0
+	       AND l.capigcpig IN(SELECT pi.catpgcpig	
+				    		  FROM catpg pi
+				    		  WHERE pi.catpgcpig=l.capigcpig
+				    		  AND pi.catpgtpgr is not null
+	                          AND pi.catpgctab is not null
+	                          AND pi.catpgcpig not IN (3,5,6,7,8,9,10,50))),2) SALDO,--16
 f.caprompro PROMEDIO_DE_LOS_SALDOS,--17
 round(b.camcaiacu,2) MONTO_INTERES_DEVENGADO,--18
 (select e.gbpmtfdia
 from gbpmt e) FECHA_DEVENGAMIENTO,--19
-decode(b.camcacmon,1,(select left(r.catpgctab,6)
+decode(b.camcacmon,1,(select r.catpgctab
                       from capig q,catpg r
                       where q.capigncta=b.camcancta
                       and q.capigcpig=r.catpgcpig
@@ -520,7 +513,7 @@ decode(b.camcacmon,1,(select left(r.catpgctab,6)
                                                            and pi.catpgtpgr is not null
                                                            and pi.catpgctab is not null
                                                            and pi.catpgcpig NOT in (3,5,6,7,8,9,10,50)))),
-                     2,(select left(r.catpgctab,6)
+                     2,(select r.catpgctab
                         from capig q,catpg r
                         where q.capigncta=b.camcancta
                         and q.capigcpig=r.catpgcpig
@@ -579,7 +572,7 @@ decode(b.camcacmon,1,(select left(r.catpgctab,6)
    WHERE x.catrnncta = b.camcancta
    AND x.catrnpref = 10
    AND x.catrncorr = 1
-   AND x.catrnstat = 0) FECHA_ULTIMA_CAPITALIZACION,--22
+   AND x.catrnstat = 0) FECHA_ULT_CAPITALIZACION,--22
 (SELECT min(catrnftra)
 FROM (SELECT FIRST 2 catrnftra
 	FROM catrn
@@ -588,7 +581,7 @@ FROM (SELECT FIRST 2 catrnftra
 	ORDER BY catrnftra DESC) tmp
 ) FECHA_PENULT_OPERACION, --23
 b.camcafumv fecha_ult_operacion_cta,--24
-b.camcafumv fecha_ult_operacion_socio--25
+b.camcafumv FECHA_ULT_OPERACION_ASOCIADO--25
 from gbage a,camca b,catca c,OUTER canid d,cacon e,OUTER capro f,gbofi g,cacon h,outer catcm i,gbcon j
 where a.gbagecage=b.camcacage
 and b.camcatpca=c.catcatpca
@@ -606,20 +599,18 @@ and a.gbagetper=j.gbconcorr
 and b.camcastat in(1,2,3)
 and d.canidmrcb=0
 and e.caconpref=3
---AND b.camcancta = 3051920851
-and f.capronmes=(select month(a.gbpmtfdia)
-         		from  gbpmt a)
-and f.caproanio=(select year(a.gbpmtfdia)
-         		from  gbpmt a)
-and exists (select *
-          from capig h
-          where h.capigncta=b.camcancta
-          and h.capigstat=0
-          and h.capigcpig in(select max(pi.catpgcpig) 
-                             from catpg pi
-                             where pi.catpgcpig=h.capigcpig
-                             and pi.catpgtpgr is not null
-                             and pi.catpgctab is not null
-                             and pi.catpgcpig NOT in (3,5,6,7,8,9,10,50))
-      and h.capigimpo>0) 
+--AND b.camcancta = 2051000087
+AND f.capronmes = (SELECT MONTH(a.gbpmtfdia) FROM gbpmt a)
+AND f.caproanio = (SELECT YEAR(a.gbpmtfdia) FROM  gbpmt a)
+AND EXISTS (SELECT *
+     	    FROM capig h
+		    WHERE h.capigncta = b.camcancta
+			AND h.capigstat = 0
+			AND h.capigcpig IN (SELECT max(pi.catpgcpig)	
+			    			   FROM catpg pi
+			    			   WHERE pi.catpgcpig = h.capigcpig
+			    			   AND pi.catpgtpgr is not null
+                               AND pi.catpgctab is not null
+                               AND pi.catpgcpig not IN (3,5,6,7,8,9,10,50))
+			AND h.capigimpo>0)
 order by 10,20,1;

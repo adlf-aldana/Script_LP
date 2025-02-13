@@ -7,20 +7,21 @@
 SELECT *FROM tdofi
 --tbase@mlptcp1                 
 UPDATE tdofi 
-SET tdofihost = 'tbase@cm04'
+SET tdofihost = 'tbase@cm06'
 
 SELECT *FROM gbofi ORDER BY 1;
 
 --tbase@cm09                    
 -- CM
 UPDATE gbofi
-SET gbofihost = 'tbase@cm07';
+SET gbofihost = 'tbase@cm03';
 
 -- LINEA
 UPDATE gbofi
 SET gbofihost = 'tbase@mlptcp1';
 
-SELECT *FROM gbdsn;
+SELECT *FROM gbdsn
+
 --netbank-php-dev                         
 -- LABORATORIO
 UPDATE gbdsn

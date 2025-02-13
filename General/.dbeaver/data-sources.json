@@ -129,8 +129,10 @@
 				"configurationType": "URL",
 				"type": "dev",
 				"closeIdleConnection": true,
-				"auth-model": "native",
-				"handlers": {}
+				"auth-model": "native"
+			},
+			"custom-properties": {
+				"resultset.grid.value.format": "EDIT"
 			}
 		},
 		"informix-194853bad30-570b1dcde96c726e": {
@@ -147,6 +149,9 @@
 				"type": "dev",
 				"closeIdleConnection": true,
 				"auth-model": "native"
+			},
+			"custom-properties": {
+				"SQLEditor.outputPanel.autoShow": "false"
 			}
 		},
 		"informix-194853c8ce0-3bc68dd79d879d3a": {

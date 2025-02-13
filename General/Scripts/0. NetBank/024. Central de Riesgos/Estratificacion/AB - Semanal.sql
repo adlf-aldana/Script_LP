@@ -4,7 +4,7 @@ WHERE crslbagrp = 2 --AGRUPADOR
 AND crslbrsld = 9 --COD_ESTRATO
 AND crslbnive  = 1 --MONEDA
 AND crslbtdep = 5
-AND a.crslbfece >= '2023-12-01';
+AND a.crslbfece >= '2025-01-01';
 
 SELECT *FROM camca WHERE camcacage = 359160
 
@@ -28,7 +28,7 @@ AND crslbfece = '2022-09-09';
 /* COUNT POR FECHAS */ --824
 select a.crslbfece fecha, count (*) cant
 from crslb a
-where a.crslbfece >= '2023-05-01'
+where a.crslbfece >= '2025-01-01'
 --and a.crslbncta is null
 group by 1
 order by 1;

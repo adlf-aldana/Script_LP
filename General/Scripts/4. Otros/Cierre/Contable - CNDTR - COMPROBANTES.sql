@@ -38,27 +38,27 @@ from cnhtr a;
 ***************************************************************
 /* SACAR BACKUP CNDTR, CNHTR CON NTRA*/
 /*CNDTR_CNHTR_NTRA*/--LINEA
-unload to cndtr_linea_antes.txt
+unload to cndtr_linea_759.txt
 select *
 from cndtr a
-where a.cndtrntra in(4839,4832,4836);
+where a.cndtrntra in(759);
 
-unload to cnhtr_linea_antes.txt
+unload to cnhtr_linea_759.txt
 select *
 from cnhtr a
-where a.cnhtrntra in(4839,4832,4836);
+where a.cnhtrntra in(759);
 
 
 /*CNDTR_CNHTR_NTRA*/--2da
-unload to cndtr_2dantra_4839_4832_4836.txt
+unload to cndtr_2dantra_759.txt
 select *
 from cndtr a
-where a.cndtrntra in(4839,4832,4836);
+where a.cndtrntra in(759);
 
-unload to cnhtr_2dantra_4839_4832_4836.txt
+unload to cnhtr_2dantra_759.txt
 select *
 from cnhtr a
-where a.cnhtrntra in(4839,4832,4836);
+where a.cnhtrntra in(759);
 ----------------------------------------------
 unload to cndtr_testing_4836.txt
 select *
@@ -74,11 +74,17 @@ where a.cnhtrntra in(4836);
 /* DELETE EN 2DA - CNDTR, CNHTR CON NTRA*/
 /*CNDTR_NTRA*/
 delete from cndtr a
-where a.cndtrntra in(4836);
+
+SELECT *FROM cndtr a
+where a.cndtrntra in(759);
 
 /*CNHTR_NTRA*/
 delete from cnhtr a
-where a.cnhtrntra in(4836);
+where a.cnhtrntra in(759);
+
+load from cndtr_linea_759.txt insert into cndtr;
+load from cnhtr_linea_759.txt insert into cnhtr;
+
 
 ***************************************************************
 /* INSERT INTO DE LINEA EN 2DA - CNDTR, CNHTR CON NTRA*/

@@ -7,7 +7,7 @@ delete adcry_h a
 where a.adcryusrn IN ('AMY');
 
 /* PARA HABILITAR */
---update adusr a
+update adusr a
 set a.adusrmrcb=0,a.adusrcifa=0
 where a.adusrusrn in('AMY');
 
@@ -18,9 +18,10 @@ order by 1;
 /* Borrar la sesion a TODOS*/
 delete from liulg a
 where a.liulguser --is not null;
+
 /* Borrar la sesion x Usuario*/
 delete from liulg a
-where a.liulguser = 'AMY';
+where a.liulguser = 'RCV';
 
 /* PERFIL ADMINISTRADOR */
 select *
